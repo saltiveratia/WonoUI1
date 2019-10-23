@@ -8,6 +8,7 @@ public class BaseTest {
     public static void setup() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://release.wono.ai";
+        Configuration.holdBrowserOpen = true;
 
     }
 
