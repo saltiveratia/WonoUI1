@@ -9,6 +9,13 @@ import static com.codeborne.selenide.Selenide.*;
 public class WonoAddVehicleTest extends BaseTest{
     @Test
     public void userCreateVehicle() {
+        open("/");
+        new WonoLoginpage()
+                .closeTestWindow()
+                .loginString("amaga@yandex.ru")
+                .passwordString("gqPr<!xqQ[6AA2T,")
+                .isUserLogged();
+        System.out.println(321321);
 
     }
 

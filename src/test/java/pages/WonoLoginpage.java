@@ -12,8 +12,7 @@ public class WonoLoginpage {
         return this;
     }
     public WonoLoginpage loginString(String text) {
-        $(By.xpath("//*[text()='Log In' and 1]")).click();
-        //$(By.xpath(".//button[@class='mat-stroked-button mat-button-base mat-accent']/span[@class='mat-button-wrapper' and 1]")).click();
+        $(By.xpath(".//button[@class='mat-stroked-button mat-button-base mat-accent']/span[@class='mat-button-wrapper' and 1]")).click();
         $(By.xpath(".//div[@class='cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing']")).shouldBe(exist);
         $(By.xpath(".//*[@formcontrolname='email']")).setValue(text);
         return this;
