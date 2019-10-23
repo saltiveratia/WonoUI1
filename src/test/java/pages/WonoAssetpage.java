@@ -31,9 +31,10 @@ public class WonoAssetpage {
         $(By.xpath(".//*[1]/span[1 and @class='mat-option-text']")).shouldBe(visible).click();
         //Choose the brand list
         //$(byText("Choose the brand")).shouldBe(visible).click();
-        //$(By.xpath(".//*[text()='Choose the brand']")).isDisplayed(true).click();
-        $(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]/div[@class='mat-select-arrow-wrapper' and 2]/div[@class='mat-select-arrow' and 1]")).waitUntil(exist, 10000).click();
-        $(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 1000).click();
+        $(By.xpath(".//*[text()='Choose the brand']")).shouldBe(matchText("Choose the brand")).waitUntil(exist, 10000).click();
+        //$(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]/div[@class='mat-select-arrow-wrapper' and 2]/div[@class='mat-select-arrow' and 1]")).waitUntil(exist, 10000).click();
+        //$(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 1000).click();
+
         //Audi
         $(By.xpath(".//*[14]/span[1 and @class='mat-option-text']/span[1]")).waitUntil(exist, 1000).click();
 
