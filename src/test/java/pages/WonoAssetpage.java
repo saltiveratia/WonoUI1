@@ -1,7 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -29,59 +33,66 @@ public class WonoAssetpage {
         $(By.xpath(".//mat-select[@id='mat-select-2']/div[@class='mat-select-trigger' and 1]")).shouldBe(visible).click();
         //choose car
         $(By.xpath(".//*[1]/span[1 and @class='mat-option-text']")).shouldBe(visible).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
         //Choose the brand list
-        //$(byText("Choose the brand")).shouldBe(visible).click();
-        $(By.xpath(".//*[text()='Choose the brand']")).shouldBe(matchText("Choose the brand")).waitUntil(exist, 10000).click();
-        //$(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]/div[@class='mat-select-arrow-wrapper' and 2]/div[@class='mat-select-arrow' and 1]")).waitUntil(exist, 10000).click();
-        //$(By.xpath(".//mat-select[@id='mat-select-9']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 1000).click();
-
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-34 ng-star-inserted']")).shouldBe(visible).click();
         //Audi
-        $(By.xpath(".//*[14]/span[1 and @class='mat-option-text']/span[1]")).waitUntil(exist, 1000).click();
-
-
+        $(By.xpath(".//*[14]/span[1 and @class='mat-option-text']/span[1]")).waitUntil(exist, 10000).click();
         //Model list
-        //$(By.xpath("..//mat-select[@id='mat-select-3']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 2000).click();
-        $(By.xpath(".//*[text()='Choose the model']")).waitUntil(exist, 20000).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
+        $(By.xpath(".//mat-select[@id='mat-select-3']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 10000).click();
         //A5
-        $(By.xpath(".//*[13]/span[1 and @class='mat-option-text']/span[1]")).shouldBe(exist).click();
+        $(By.xpath(".//mat-option[13]/span[@class='mat-option-text' and 1]")).shouldBe(exist).click();
+
         //Year list
-        $(By.xpath(".//*[@class='mat-select ng-tns-c17-27 ng-untouched ng-pristine ng-invalid mat-select-empty ng-star-inserted']/div[1 and @class='mat-select-trigger']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-23 ng-star-inserted']")).shouldBe(exist).click();
         //2016
-        $(By.xpath(".//*[9]/span[1 and @class='mat-option-text']")).click();
+        $(By.xpath(".//mat-option[9]")).click();
         //Trim list
-        $(By.xpath(".//*[@class='mat-select ng-tns-c17-29 ng-pristine ng-valid mat-select-empty ng-star-inserted ng-touched']/div[1 and @class='mat-select-trigger']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-25 ng-star-inserted']")).click();
         //Trim element
         $(By.xpath(".//*[3]/span[1 and @class='mat-option-text']/span[1]")).shouldBe(exist).click();
         //Engine input - set text "2.0L 4cyl"
-        //$(By.xpath(".//*[@class='wono-input wono-input-with-label ng-pristine ng-invalid ng-touched']")).shouldBe(exist).setValue(text);
+        $(By.xpath(".//input[@class='wono-input wono-input-with-label ng-untouched ng-pristine ng-invalid']")).shouldBe(exist).setValue(text);
         return this;
     }
 
-    public WonoAssetpage listVechicle1(String text) {
+    public WonoAssetpage listVechicle1() {
         //Body type
-        $(By.xpath(".//*[@class='mat-select ng-tns-c17-31 ng-untouched ng-pristine ng-invalid mat-select-empty ng-star-inserted']/div[1 and @class='mat-select-trigger']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-27 ng-star-inserted']")).shouldBe(exist).click();
         //Van
-        $(By.xpath(".//*[@id='mat-option-25']")).shouldBe(exist).click();
+        $(By.xpath(".//mat-option[@id='mat-option-12']")).shouldBe(exist).click();
         //Number of seats
-        $(By.xpath(".//*[@class='mat-select ng-tns-c17-33 ng-pristine ng-invalid mat-select-empty ng-star-inserted ng-touched mat-select-invalid']/div[1 and @class='mat-select-trigger']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-29 ng-star-inserted']")).shouldBe(exist).click();
         //5
-        $(By.xpath(".//*[@id='mat-option-29']")).shouldBe(exist).click();
+        $(By.xpath(".//*[@id='mat-option-22']")).shouldBe(exist).click();
         //Fuel type
-        $(By.xpath(".//*[@class='mat-select ng-tns-c17-35 ng-pristine ng-invalid mat-select-empty ng-star-inserted ng-touched mat-select-invalid']/div[1 and @class='mat-select-trigger']")).shouldBe(exist).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-31 ng-star-inserted']")).shouldBe(exist).click();
         //Gasoline
         $(By.xpath(".//*[3]/span[1 and @class='mat-option-text']")).shouldBe(exist).click();
         //"Automatic" radiobutton
         $(By.xpath(".//*[2]/label[1 and @class='mat-radio-label']/div[2 and @class='mat-radio-label-content']")).shouldBe(exist).click();
-        //Odometer list - set text "4"
-        $(By.xpath("//*[@class='wono-input ng-dirty ng-touched ng-valid']")).shouldBe(exist).setValue(text);
         return this;
     }
 
     public WonoAssetpage listVechicle2(String text) {
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-18 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-18 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
         //Search location set text "12"
-        $(By.xpath(".//*[@class='search wono-input ng-untouched ng-pristine ng-valid invalid-input']")).shouldBe(exist).setValue(text);
+        //$(By.xpath(".//input[@class='search wono-input ng-untouched ng-pristine ng-valid']")).shouldBe(exist).setValue(text);
+        $(By.xpath(".//div[@id='cdk-accordion-child-5']/div[1]/div[1]/div[1]/input[1]")).shouldBe(exist).setValue(text).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+
         //click third position in list
-        $(By.xpath(".//*[3]")).shouldBe(exist).click();
+        //$(By.xpath("//*[1]")).shouldBe(exist).click();
+        //$(By.xpath("//input[@class='search wono-input ng-valid invalid-input ng-dirty ng-touched']")).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+
+
         return this;
     }
 
