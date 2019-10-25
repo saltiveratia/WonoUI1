@@ -9,6 +9,8 @@ public class BaseTest {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://release.wono.ai";
         Configuration.holdBrowserOpen = true;
+        Configuration.savePageSource = false;
+        Configuration.screenshots = false;
 
     }
 

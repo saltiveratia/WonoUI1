@@ -4,11 +4,9 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Condition.exist;
@@ -42,10 +40,10 @@ public class WonoAssetpage {
         //Model list
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
-        $(By.xpath(".//mat-select[@id='mat-select-3']/div[@class='mat-select-trigger' and 1]")).waitUntil(exist, 10000).click();
+        $(By.xpath(".//span[@class='mat-select-placeholder ng-tns-c17-21 ng-star-inserted']")).waitUntil(exist, 10000).click();
         //A5
-        $(By.xpath(".//mat-option[13]/span[@class='mat-option-text' and 1]")).shouldBe(exist).click();
-
+        $(By.xpath(".//mat-option[13]")).shouldBe(exist).click();
+        //$(By.xpath(".//*[1]/*[1]/*[1]/*[13]")).waitUntil(exist, 10000).click();
         //Year list
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
@@ -82,11 +80,19 @@ public class WonoAssetpage {
     }
 
     public WonoAssetpage listVechicle2(String text) {
+
+        //YOU'RE HERE!
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-18 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
         $(By.xpath(".//span[@class='mat-expansion-indicator ng-tns-c26-18 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).shouldBe(exist).click();
         //Search location set text "12"
         //$(By.xpath(".//input[@class='search wono-input ng-untouched ng-pristine ng-valid']")).shouldBe(exist).setValue(text);
-        $(By.xpath(".//div[@id='cdk-accordion-child-5']/div[1]/div[1]/div[1]/input[1]")).shouldBe(exist).setValue(text).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+        $(By.xpath(".//*[@placeholder='Search location']"))
+                .shouldBe(exist)
+                .setValue(text)
+                .sendKeys(Keys.ENTER);
+        //$(By.xpath(".//div[@id='cdk-accordion-child-5']/div[1]/div[1]/div[1]/input[1]")).sendKeys(Keys.DOWN, Keys.RETURN);
+        //BUT HERE'S CRAP
+
 
         //click third position in list
         //$(By.xpath("//*[1]")).shouldBe(exist).click();
